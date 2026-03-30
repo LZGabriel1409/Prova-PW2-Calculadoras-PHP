@@ -25,6 +25,8 @@
     $peso = $_POST["peso"];
     $valor = 0;
     $valorex = 0;
+    $rvalor = "R$ " . number_format($valor, 2, ",");
+    $rvalorex = "R$ " . number_format($valorex, 2, ",");
 
     $valor = 10 + (0.5 * $dist);
     if ($peso > 20) {
@@ -38,9 +40,9 @@
     };
     echo "<p>Distância da entrega: $dist km</p>";
     echo "<strong><h1>Valores Finais: </h1></strong>";
-    echo "<h3>O valor total é de: R$ $valor</h3>";
+    echo "<h3>O valor total é de: $valor</h3>";
     $valorex = ($valor / 20) + $valor;
-    echo "<h4>Valor com envio expresso: R$ $valorex</h4>";
+    echo "<h4>Valor com envio expresso: $valorex</h4>";
     ?>
 </body>
 </html>
