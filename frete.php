@@ -7,42 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bem vindo ao Simulador de Frete "Logística Express"</h1>
-    <h2>Por favor digite as informações do seu produto</h2>
 
-    <form action="frete.php" method="post">
-        <label for="peso">Peso (em kg):</label>
-        <input name="peso" id="peso" type="number">
-        <p></p>
-        <label for="dist">Distância total (em km):</label>
-        <input name="dist" id="dist" type="number">
-        <p></p>
+<div class="container">
+    <h2>Logística Express</h2>
+    <h3>Simulador de Frete</h3>
 
-        <button type="submit">Enviar</button>
+    <form action="frete.php" method="POST">
+        <input type="number" name="distancia" placeholder="Distância (km)" required>
+
+        <input type="number" name="peso" placeholder="Peso (kg)" required>
+
+        <select name="tipo">
+            <option value="normal">Normal</option>
+            <option value="expresso">Expresso</option>
+        </select>
+
+        <button type="submit">Calcular Frete</button>
     </form>
-    <?php
-    $dist = $_POST["dist"];
-    $peso = $_POST["peso"];
-    $valor = 0;
-    $valorex = 0;
-    $rvalor = "R$ " . number_format($valor, 2, ",");
-    $rvalorex = "R$ " . number_format($valorex, 2, ",");
+</div>
 
-    $valor = 10 + (0.5 * $dist);
-    if ($peso > 20) {
-        $valor = $valor + 30;
-    };
+<?php
+$distancia = $_POST['distancia'];
+$peso = $_POST['peso'];
+$tipo = $_POST['tipo'];
+$total = 10;
+$total += $distancia * 0.5;
 
-    echo "<p>Informações digitadas pelo usuário:</p>";
-    echo "<p>O peso do produto: $peso kg</p>";
-    if ($peso > 20) {
-        echo "<p>Devido ao peso ser maior que 20kg, adicionamos uma taxa de R$30,00.</p>";
-    };
-    echo "<p>Distância da entrega: $dist km</p>";
-    echo "<strong><h1>Valores Finais: </h1></strong>";
-    echo "<h3>O valor total é de: $valor</h3>";
-    $valorex = ($valor / 20) + $valor;
-    echo "<h4>Valor com envio expresso: $valorex</h4>";
-    ?>
+if ($peso > 20) {
+    $total += 30;
+}
+
+if ($tipo == "expresso") {
+    $total *= 1.2;
+}
+?>
+
+<div class="resultado">
+    <h2>Resultado do Frete</h2>
+
+    <p><b>Distância:</b> <?php echo $distancia; ?> km</p>
+    <p><b>Peso:</b> <?php echo $peso; ?> kg</p>
+    <p><b>Tipo:</b> <?php echo ucfirst($tipo); ?></p>
+
+    <h3>Total: R$ <?php echo number_format($total, 2, ","); ?></h3>
+
+    <a href="index.php">Voltar a página inicial</a>
+</div>
+
 </body>
 </html>

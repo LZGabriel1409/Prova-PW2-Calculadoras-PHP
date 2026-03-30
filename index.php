@@ -7,8 +7,8 @@
     <title>Exercícios da prova</title>
 </head>
 <body>
-    <nav>
         <a href="frete.php">Frete</a>
-    </nav>
+        <a href="blackfriday.php">Black Friday</a>
+        <a href="calcularxp.php">Calcular Xp</a>
 </body>
 </html>
