@@ -10,5 +10,6 @@
         <a href="frete.php">Frete</a>
         <a href="blackfriday.php">Black Friday</a>
         <a href="calcularxp.php">Calcular Xp</a>
+        <a href="streamer.php">Streamer</a>
 </body>
 </html>
