@@ -7,9 +7,12 @@
     <title>Exercícios da prova</title>
 </head>
 <body>
-        <a href="frete.php">Frete</a>
-        <a href="blackfriday.php">Black Friday</a>
-        <a href="calcularxp.php">Calcular Xp</a>
-        <a href="streamer.php">Streamer</a>
+    <div class="container">
+        <h1>Exercícios da prova de PW2</h1>
+        <a href="frete.php">O Simulador de Frete "Logística Express"</a>
+        <a href="blackfriday.php">Sistema de Vendas "Black Friday"</a>
+        <a href="calcularxp.php">O "Calculador de XP"</a>
+        <a href="streamer.php">O "Filtro de Streamer"</a>
+    </div>
 </body>
 </html>

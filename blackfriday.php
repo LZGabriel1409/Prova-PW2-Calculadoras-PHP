@@ -12,7 +12,7 @@
     <h2>Black Friday</h2>
     <h3>Calculadora de Desconto</h3>
 
-    <form action="desconto.php" method="POST">
+    <form action="blackfriday.php" method="POST">
         <input type="number" step="0.01" name="valor" placeholder="Valor da Compra (R$)">
 
         <input type="text" name="cupom" placeholder="Código do Cupom">

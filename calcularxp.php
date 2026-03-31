@@ -11,7 +11,7 @@
     <div class="container">
     <h2>Calculador de XP</h2>
 
-    <form action="xp.php" method="POST">
+    <form action="calcularxp.php" method="POST">
         <input type="number" name="nivel" placeholder="Nível Atual" required>
 
         <input type="number" name="xp" placeholder="XP Atual" required>
@@ -61,7 +61,7 @@ if ($xpTotal > 1000) {
         <p class="levelup">PARABÉNS! Você subiu para o nível <?php echo $novoNivel; ?>!</p>
     <?php } ?>
 
-    <a href="index.php">Voltar a página inicial</a>/
+    <a href="index.php">Voltar a página inicial</a>
 </div>
 
 </body>
